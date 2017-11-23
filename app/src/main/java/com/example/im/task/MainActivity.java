@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     //sign out  function for google
     void signOut() {
-
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
                 new ResultCallback<Status>() {
                     @Override
@@ -112,9 +111,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else {
             // Signed in successfully, show authenticated UI.
+            mProgressDialog = ProgressDialog.show(this, "","Please Wait...", true);
             GoogleSignInAccount acct = result.getSignInAccount();
             Log.e(TAG, "display name: " + acct.getDisplayName());
-
             userName = acct.getDisplayName();
             email = acct.getEmail();
             if(acct.getPhotoUrl()!=null)
@@ -129,15 +128,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             c.setEmail(email);
             c.setPic(userPic);
             c.setApp("Google");
-            c.setDate(DateFormat.getDateTimeInstance().format(new Date()).toString());
+            c.setDate(DateFormat.getDateTimeInstance().format(new Date()));
             dbhelp.insert(c);
-            Intent intent = new Intent(MainActivity.this, LocationActivity.class);
-//            Bundle bundle =new Bundle();
-//            bundle.putString("name",userName);
-//            bundle.putString("email",email);
-//            bundle.putString("userPic",userPic);
-//            intent.putExtras(bundle);
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            Bundle bundle =new Bundle();
+            bundle.putString("name",userName);
+            bundle.putString("email",email);
+            bundle.putString("userPic",userPic);
+            intent.putExtras(bundle);
             startActivity(intent);
+//            mProgressDialog.dismiss();
             finish();
         }
 

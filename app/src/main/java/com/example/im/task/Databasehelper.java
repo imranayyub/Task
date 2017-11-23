@@ -23,11 +23,8 @@ public class Databasehelper extends SQLiteOpenHelper {
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_TIME = "time";
     public static final String COLUMN_APP = "app";
-    public static final String COLUMN_FNAME = "fname";
-    public static final String COLUMN_ADDRESS = "address";
     public static final String COLUMN_PROFILEPIC = "profilepic";
-    public static final String COLUMN_GALLERYIMAGE = "galleryimage";
-    public static final String TABLE_CREATE = "create table Contact (NAME not null , EMAIL not null,APP not null,TIME not null, FNAME, ADDRESS, GALLERYIMAGE,PROFILEPIC );";
+    public static final String TABLE_CREATE = "create table Contact (NAME not null , EMAIL not null,APP not null,TIME not null,PROFILEPIC );";
 
 
     String DB_PATH = null;
@@ -63,10 +60,7 @@ public class Databasehelper extends SQLiteOpenHelper {
             values.put(COLUMN_NAME, c.getName());
             values.put(COLUMN_APP, c.getApp());
             values.put(COLUMN_TIME, c.getDate());
-            values.put(COLUMN_FNAME, c.getFname());
-            values.put(COLUMN_ADDRESS, c.getAddress());
             values.put(COLUMN_PROFILEPIC, c.getPic());
-            values.put(COLUMN_GALLERYIMAGE, c.getGalleryImage());
             db.insert(TABLE_NAME, null, values);
         } catch (Exception e) {
             e.printStackTrace();   //Very useful tool for diagnosing an Exception. It tells what happened and where in the code this happened.
@@ -92,10 +86,6 @@ public class Databasehelper extends SQLiteOpenHelper {
             for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
                 login_app = cursor.getString(cursor.getColumnIndex("APP"));       //Fetches data Stored in APP Column of the Table.
                 c.setApp(login_app);
-                father = cursor.getString(cursor.getColumnIndex("FNAME"));
-                c.setFname(father);
-                address = cursor.getString(cursor.getColumnIndex("ADDRESS"));
-                c.setAddress(address);
                 name = cursor.getString(cursor.getColumnIndex("NAME"));
                 c.setName(name);
                 email = cursor.getString(cursor.getColumnIndex("EMAIL"));
@@ -108,9 +98,7 @@ public class Databasehelper extends SQLiteOpenHelper {
         }
         if (count == 0) {
             c.setApp("null");
-            c.setAddress("");
-            c.setAddress("");
-        }
+            }
         return c;
     }
 
