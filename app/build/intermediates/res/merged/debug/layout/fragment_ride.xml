@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.im.task.RideFragment"
+    tools:context="com.example.im.task.Fragments.RideFragment"
     android:id="@+id/fragment"
     android:background="@drawable/background">
 

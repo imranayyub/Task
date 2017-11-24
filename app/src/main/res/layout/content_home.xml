@@ -5,15 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.im.task.HomeActivity"
+    tools:context="com.example.im.task.Activities.HomeActivity"
     tools:showIn="@layout/app_bar_home"
     android:id="@+id/main">
-    <!--<fragment-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:name="com.example.im.task.RideFragment"-->
-        <!--android:id="@+id/rideFragment">-->
-    <!--</fragment>-->
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"

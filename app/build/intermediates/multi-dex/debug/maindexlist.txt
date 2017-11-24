@@ -121,6 +121,7 @@ com/google/android/gms/internal/zzale.class
 com/google/android/gms/cast/CastRemoteDisplay$CastRemoteDisplaySessionResult.class
 com/google/android/gms/common/internal/safeparcel/zza.class
 android/support/v7/widget/RecyclerView$1.class
+com/example/im/task/Interfaces/ApiInterface.class
 android/support/annotation/Nullable.class
 android/support/v7/widget/ViewBoundsCheck$Callback.class
 com/google/ads/AdSize.class
@@ -232,7 +233,6 @@ com/google/android/gms/common/GooglePlayServicesUtil.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 com/google/android/gms/ads/internal/overlay/zzy.class
 com/google/android/gms/internal/zzrl.class
-com/example/im/task/ApiInterface.class
 com/google/android/gms/wearable/MessageApi$MessageListener.class
 com/google/android/gms/ads/formats/NativeAdOptions$Builder.class
 android/support/v7/widget/RecyclerView$AdapterDataObserver.class
@@ -487,7 +487,6 @@ android/support/v4/app/NotificationCompat$Action.class
 com/google/android/gms/internal/zzcku.class
 android/support/v4/widget/MaterialProgressDrawable$Ring.class
 com/google/android/gms/internal/zzzo.class
-com/example/im/task/RideHistory.class
 com/google/android/gms/internal/zzaiu.class
 android/support/design/widget/TabLayout.class
 com/google/android/gms/internal/zzig.class
@@ -506,6 +505,7 @@ com/google/android/gms/common/internal/zzbw.class
 com/google/android/gms/ads/VideoController.class
 com/google/android/gms/internal/zzajc.class
 com/google/android/gms/internal/zzio.class
+com/example/im/task/Model/RideHistory.class
 com/google/android/gms/internal/zzzg.class
 android/support/v4/text/util/LinkifyCompat$LinkifyMask.class
 com/google/android/gms/appindexing/Action$Builder.class
