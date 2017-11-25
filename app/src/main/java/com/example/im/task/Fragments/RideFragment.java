@@ -32,9 +32,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RideFragment extends Fragment {
 
-    //    private static OkHttpClient defaultHttpClient = new OkHttpClient();
-    //used in Logs.
-    private static final String TAG = MainActivity.class.getSimpleName();
+    //TAG is used in Logs.
+    private static final String TAG = RideFragment.class.getSimpleName();
     RecyclerView recyclerView;
     ProgressDialog progressDialog;
 
@@ -69,7 +68,7 @@ public class RideFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())     //Using GSON to Convert JSON into POJO.
                 .build();
         progressDialog = ProgressDialog.show(getActivity(), "", "Please Wait...", true);
-
+        //Passing Interface to create an implementation.
         ApiInterface apiService = retrofit.create(ApiInterface.class);
 
         Call<List<RideHistory>> call = apiService.getDetail();   //Making Api call using Call Retrofit method that sends a request to a webserver and returns a response.
@@ -82,11 +81,11 @@ public class RideFragment extends Fragment {
                 MyAdapter adapter = new MyAdapter(getActivity(), rideHistory);
                 recyclerView.setAdapter(adapter);
                 progressDialog.dismiss();
-//                for (RideHistory m : rideHistory) {
-//                    Log.d("Booking_id : ", m.getBooking_id());
-//                    Log.d("Image : ", m.getImage());
-//                    Log.d("date : ", m.getTime());
-//                }
+                for (RideHistory m : rideHistory) {
+                    Log.d("Booking_id : ", m.getBooking_id());
+                    Log.d("Image : ", m.getImage());
+                    Log.d("date : ", m.getTime());
+                }
                 Toast.makeText(getActivity(), "Ride History", Toast.LENGTH_SHORT).show();
             }
 

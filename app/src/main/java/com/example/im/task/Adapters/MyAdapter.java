@@ -78,7 +78,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder> {
 
     }
 
-    //Function to get the size of Array List rideHistory.
+    //Function to get the size of List rideHistory.
     @Override
     public int getItemCount() {
         return rideHistory.size();

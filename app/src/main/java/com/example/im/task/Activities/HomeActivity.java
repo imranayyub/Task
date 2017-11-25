@@ -97,7 +97,7 @@ public class HomeActivity extends AppCompatActivity
                     // Geocoder class for handling geocoding and reverse geocoding. Geocoding is the process of transforming a street address or other description of a location into a (latitude, longitude) coordinate. Reverse geocoding is the process of transforming a (latitude, longitude) coordinate into a (partial) address.
                     Geocoder geocoder = new Geocoder(getApplicationContext());
                     try {
-                        mMap.clear();
+                        mMap.clear(); //clears all Markers and Polylines.
                         List<Address> addressList = geocoder.getFromLocation(latitude, longitude, 1);  //Geocoding i.e., Converting Coordinates into Address.
                         str = addressList.get(0).getLocality() + ",";
                         str += addressList.get(0).getCountryName();
@@ -114,19 +114,22 @@ public class HomeActivity extends AppCompatActivity
 
                 }
 
+                //In case Status of provider changes.
                 @Override
                 public void onStatusChanged(String provider, int status, Bundle extras) {
 
                 }
 
+                //IN case provider is enabled.
                 @Override
                 public void onProviderEnabled(String provider) {
 
                 }
 
+                //In case if Provider is disabled
                 @Override
                 public void onProviderDisabled(String provider) {
-
+                    Toast.makeText(getApplicationContext(), "Please enable the location..", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -158,19 +161,22 @@ public class HomeActivity extends AppCompatActivity
 
                 }
 
+                //In case Status of provider changes.
                 @Override
                 public void onStatusChanged(String provider, int status, Bundle extras) {
 
                 }
 
+                //IN case provider is enabled.
                 @Override
                 public void onProviderEnabled(String provider) {
 
                 }
 
+                //In case if Provider is disabled
                 @Override
                 public void onProviderDisabled(String provider) {
-
+                    Toast.makeText(getApplicationContext(), "Please enable the location..", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -254,8 +260,8 @@ public class HomeActivity extends AppCompatActivity
 
     //Function to Draw the Polyline on the Map.
     private void redrawLine() {
-        mMap.clear();  //clears all Markers and Polylines
-         PolylineOptions options = new PolylineOptions().width(7).color(Color.BLUE).geodesic(true); //Defining Properties of Polyline. A geodesic is the shortest path between two points on the Earth's surface. The geodesic curve is constructed assuming the Earth is a sphere.
+        mMap.clear();  //clears all Markers and Polylines.
+        PolylineOptions options = new PolylineOptions().width(7).color(Color.BLUE).geodesic(true); //Defining Properties of Polyline. A geodesic is the shortest path between two points on the Earth's surface. The geodesic curve is constructed assuming the Earth is a sphere.
         if (points.size() <= 1)
             Toast.makeText(getApplicationContext(), "No Location Selected to Display!", Toast.LENGTH_SHORT).show();
         for (int i = 0; i < points.size(); i++) {

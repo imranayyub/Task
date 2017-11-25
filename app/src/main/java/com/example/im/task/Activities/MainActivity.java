@@ -29,7 +29,7 @@ import java.text.DateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
-    //Decalring variables.
+    //Declaring variables.
     Databasehelper dbhelp = new Databasehelper(this);    //creating Databasehelper obeject
     Contact c = new Contact();
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    //oncClick method to perform action according to thebutton being clicked.
+    //oncClick method to perform action according to the button being clicked.
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -163,8 +163,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean connected = false;
 
     private boolean isNetworkAvailable() {
+        //ConnnectivityManager querires about connectivity like mobile data, wifi and Gprs.
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        //Network info define Status of network.
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if (activeNetworkInfo == null) {
             Toast.makeText(this, "No Internet Connection", Toast.LENGTH_LONG).show();
